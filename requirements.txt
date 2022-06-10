@@ -1,0 +1,5 @@
+argparse
+selenium==4.2.0
+os
+glob
+shutil
