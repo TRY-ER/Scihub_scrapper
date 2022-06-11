@@ -1,0 +1,6 @@
+python == 3.7.9
+pip == 22.1
+
+chrome_driver.exe == 102 (for the current version on chrome)
+
+* Download suitable chromedriver.exe as per the chrome version on your computer from (Here) -> https://chromedriver.chromium.org/downloads
