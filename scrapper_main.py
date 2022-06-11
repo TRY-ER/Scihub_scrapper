@@ -37,7 +37,8 @@ def get_title_urls(query: str,thresh: int) -> list:
     except: 
         print("[--] Threshold value is either exceeding or falling behind")
         print(f"[==] Length value of the list is {len(url_list)}")
-        return title_list,url_list                  #if the threshold value is hi
+        return title_list,url_list                  #if the threshold value is higher than the number of paper available
+        
 def sci_hub_download(url: str,down_time = 15) -> bool:
     ''' url : string holding the web address
         down_time : this integer holds the number of seconds the browser need to wait till the pdf download completes
