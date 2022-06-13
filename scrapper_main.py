@@ -88,12 +88,13 @@ def save_in_download(query : str ,title: str) -> None:
     sorted_files = sorted(list_o_files, key=os.path.getmtime)                               #sorting the files according to recently modified
     recent_one = sorted_files[-1]                                                           #getting the last files after sorting i.e. the file that is just downloaded
     recent_one = recent_one.split("\\")[-1]                                      #splitting the text using a \ due to some unorthodox renaming convention created by the system
-    print(recent_one)
-    src_path = f"C:/Users/avyar/Downloads/{recent_one}"                           #mentioning the path of the new file
-    new_src_path = f"C:/Users/avyar/Downloads/{refine_rename(title)}.pdf"         #mentioning the path of the file after the modification
-    os.rename(src_path,new_src_path)                                              #renaming the file and it's location
-    dst_path = f"C:/Users/avyar/Downloads/{query[:-1]}/{refine_rename(title)}.pdf"    #defing the file path to move the file 
-    shutil.move(new_src_path, dst_path)                                           #moving the file using some utility functions
+    if not recent_one.split(".")[-1] == "crdownload":                        #if the download could not complete the file name  will be saved using an extension of .crdownload
+        src_path = f"C:/Users/avyar/Downloads/{recent_one}"                      
+        new_src_path = f"C:/Users/avyar/Downloads/{refine_rename(title)}.pdf"
+        os.rename(src_path,new_src_path)
+        dst_path = f"C:/Users/avyar/Downloads/{query[:-1]}/{refine_rename(title)}.pdf"      #moving the file using some utility functions
+        shutil.move(new_src_path, dst_path)
+    else: print("[--] Download could not complete ...")             # shows the message if the download could not complete
 
 def read_query(path: str ) -> list:
     ''' Reads multiple queries as per the text file mentioned in the path'''
