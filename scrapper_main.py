@@ -70,7 +70,7 @@ def sci_hub_download(url: str,down_time = 15) -> bool:
 
 def refine_rename(title: str ) -> str:
     ''' Excludes the characters that are declined by the renaming policy of windows file system'''
-    excluder = [":","-",";"]      # some values that is to be excluded 
+    excluder = [":","-",";","/","\\"]      # some values that is to be excluded 
     new_values = []
     for value in list(title):
         if not value in excluder and not value == " ": new_values.append(value)      #deleting the excluder values excluding the space values
