@@ -22,6 +22,7 @@
 ## How to use:: ->
 
 1. Only keep the queries that you want to search in queries.txt (You can comment out a query by adding a "#" to the start of a query)
+   (Please enter relevant queries as random queries may return errors)
 
 2. Once queries are placed perfectly, run the cmd, PowerShell, or other cli on the current directory.
 
